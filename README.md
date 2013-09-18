@@ -4,12 +4,21 @@ Promise, shmomise
 Promises are overrated! Too much wiring! Let's simplify:
 
 ```javascript
-var foo = 'foo';
+var scope = { foo: 'foo' };
+
+whenDefined(scope, 'foo', console.log); // outputs 'foo'
+whenDefined(scope, 'bar', console.log);
+
+scope.bar = 'bar'; // outputs 'bar'
+```
+
+You can also use this for global variables (though I wouldn't recommend it):
+
+```javascript
+foo = 'foo';
 
 whenDefined('foo', console.log); // outputs 'foo'
 whenDefined('bar', console.log);
 
-var bar = 'bar'; // outputs 'bar'
+bar = 'bar'; // outputs 'bar'
 ```
-
-Is this possible? Maybe. Let's find out.

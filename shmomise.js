@@ -7,6 +7,7 @@
         varName  = pop.call(arguments),
         target   = pop.call(arguments) || this;
 
+    console.log('Target is ' + target);
     var storedValue = target[varName];
     if (typeof storedValue !== 'undefined') {
       callback(storedValue);
